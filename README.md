@@ -31,9 +31,10 @@ The hardware will be built around the Espressif ESP32. This neat little IC bundl
 ## Software
 Some work of the software development part has already been done as some smart people already figured out the protocol that the radio and CD changer are speaking. Information on that protocol can be found in the additional ressources below. What's left is:
 * Port the radio/CD changer protocol for use with the ESP32's FreeRTOS based OS
-* Figure out what Bluetooth profile should be used for receiving audio and send control tasks like play and pause
-* Implement that Bluetooth profile
+* Figure out how to use the bluedroid stack to turn the ESP32 into an A2DP sink and route the incoming stream to I2S
+* Figure out how to to turn the ESP32 into an AVRCP controller using bluedroid
 * Figure out I2S audio output on the ESP32
+* Since Android uses bluedroid a look at the source code may help
 * ...
 * Make everyting work nicely together
 

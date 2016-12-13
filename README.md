@@ -2,16 +2,23 @@
 ### An ESP32 based fake CD changer for various car radios.
 
 ## Introduction
-For now this is only an idea but will be my side project in 2017. This project will consist of a small piece of hardware and some software. It will be able to wirelessly connect a smartphone or other Bluetooth or WiFi enabled device to various car radios. As for my concerns I will only be able to test this project with the *Dance* radio of my *Skoda*. But since the important interfaces (for this project) are somewhat standardized throughout similar aged radios among different *VAG* brands my guess is that this project will also work for bunch of other radios.
+For now this is only an idea but will be my side project in 2017. This project will consist of a small piece of hardware and some software. It will be able to wirelessly connect a Bluetooth or perhaps WiFi enabled device to various car radios. As for my concerns I will only be able to test this project with the *Dance* radio of my *Skoda*. But since the important interfaces (for this project) are somewhat standardized throughout similar aged radios among different *VAG* brands my guess is that this project will also work for bunch of other radios.
 
 ## Boundaries
-The main goal of the esp32-cdc-faker clearly lies in bringing wireless connectivity to the car radios. Neither USB ports nor any kind of SD card slots will be provided by this project. If you are looking for such functionality jeez just put dem mp3's on your phone. No seriously there are other products available that already offer a wide range of interfaces. Though none of these only offer Bluetooth and WiFi which makes them bulky and requires them to be placed in the glovebox or somewhere in the center console. They are also mostly all quite expensive if you only need wireless conenctivity like I do. I'll take this as the rationale for this project:
+The main goal of the esp32-cdc-faker clearly lies in bringing wireless connectivity to the car radios. Neither USB ports nor any kind of SD card slots will be provided by this project. If you are looking for such functionality jeez just put dem mp3's on your phone. No seriously there are other products available that already offer a wide range of interfaces. Though none of these only offer Bluetooth or WiFi which makes them bulky and requires them to be placed in the glovebox or somewhere in the center console. They are also mostly all quite expensive if you only need wireless conenctivity like I do.
 
 ## Rationale
 There are no compareable products available that only offer wireless connectivity for a reasonable price. Instead other products feature USB ports and SD card slots an are therefore bulky and dont fit just behind the car radio.
 
 ## Planned features
+* Transfer audio from a Bluetooth enabled device to the car radio
+* Let the radio control the Bluetooth enabled device's audio by relaying button presses of play, pause, next track and so on
+* Perhaps support WiFi audio transfer via AirPlay, DLNA or similar
+* Keep the hardware small so that it fits behind the radio
 
+## Not planned features
+* Playing audio from USB or SD cards
+* Adding a microphone for handsfree. I guess the phones built in microphone is the better option since those integrate noise reduction. See [Qualcomm Fluence](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwijuOet-PDQAhUpIcAKHa6wCPgQFggcMAA&url=https%3A%2F%2Fwww.qualcomm.com%2Fmedia%2Fdocuments%2Ffiles%2Fhd-voice.ppt&usg=AFQjCNH6eloYGQNyGbhkG1lk4fI2Fb9SGA) for example
 
 ## Hardware
 The hardware will be built around the Espressif ESP32. This neat little IC bundles Bluetooth and WiFi connectivity aswell as more than enough computing power and IOs for my purposes. The ESP32 will be accompanied by an i2c DAC for analogue audio output to the car radio. The integrated DACs of the ESP32 do not seem suitable for my purposes due to their lowish (8 bit) resolution and possibly slow sampling rate. i2c DAC are commonly used among audio related projects featuring the Raspberry Pi and are therefore widely available plus they wont set you back much. During the project I'll be using a development board like the [this](https://www.adafruit.com/products/3269) and some cheap breakout board DAC. For the finnishing touch I planned to design a PCB for all the components and publish that on [easyeda.com](https://easyeda.com/) so that there will be no need to buy multiple modules but only one PCB, some ICs and passive parts.
@@ -23,14 +30,16 @@ The hardware will be built around the Espressif ESP32. This neat little IC bundl
 
 ## Software
 Some work of the software development part has already been done as some smart people already figured out the protocol that the radio and CD changer are speaking. Information on that protocol can be found in the additional ressources below. What's left is:
-* Port the radio/CD changer protocol for use with NodeMCU
-* Figure out what Bluetooth profile should be used for receiving audio and control tasks like play and pause
+* Port the radio/CD changer protocol for use with the ESP32's RTOS based OS
+* Figure out what Bluetooth profile should be used for receiving audio and send control tasks like play and pause
+* Implement that Bluetooth profile
 * Figure out i2c audio output on the ESP32
-* Develop the main application accoring to the requirement analysis
+* ...
+* Make everyting work nicely together
 
 **Additional ressources**
 * Information on the radio/CD changer protocol by Martin S. can be found on [martinsuniverse.net](http://martinsuniverse.de/projekte/cdc_protokoll/cdc_protokoll.html) (german)
-* Implementation of the radio/CD changer protocol using a Raspberry Pi on [dev.shyd.de](http://dev.shyd.de/2013/09/avr-raspberry-pi-vw-beta-vag-cdc-faker/)
+* Implementation of the radio/CD changer protocol on a Raspberry Pi here: [dev.shyd.de](http://dev.shyd.de/2013/09/avr-raspberry-pi-vw-beta-vag-cdc-faker/)
 * ESP32 firmware, SDK and exmaples on [GitHub](https://github.com/espressif/esp-idf)
 
 ## Requirement analysis

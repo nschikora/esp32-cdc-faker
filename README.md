@@ -14,24 +14,24 @@ There are no compareable products available that only offer wireless connectivit
 
 
 ## Hardware
-The hardware will be built around the Espressif ESP32. This neat little IC bundles Bluetooth and WiFi connectivity aswell as more than enough computing power and IOs for my purposes. The ESP32 will be accompanied by an i2c DAC for analogue audio output to the car radio. The integrated DACs of the ESP32 do not seem suitable for my purposes due to their lowish (8 bit) resolution and possibly slow sampling rate. Isable i2c DAC are commonly used among audio related projects featuring the Raspberry Pi and are therefore widely available plus they wont set you back much. During the project I'll be using a development board like the [NodeMCU-32S](http://www.shenzhen2u.com/NodeMCU-32S) and some cheap breakout board DAC; there are plenty available. For the finnishing touch I planned to design a PCB for all the components and publish that on [oshpark.com](https://oshpark.com/) so that there will be no need to buy multiple modules but only one PCB, some ICs and passive parts.
+The hardware will be built around the Espressif ESP32. This neat little IC bundles Bluetooth and WiFi connectivity aswell as more than enough computing power and IOs for my purposes. The ESP32 will be accompanied by an i2c DAC for analogue audio output to the car radio. The integrated DACs of the ESP32 do not seem suitable for my purposes due to their lowish (8 bit) resolution and possibly slow sampling rate. i2c DAC are commonly used among audio related projects featuring the Raspberry Pi and are therefore widely available plus they wont set you back much. During the project I'll be using a development board like the [this](https://www.adafruit.com/products/3269) and some cheap breakout board DAC. For the finnishing touch I planned to design a PCB for all the components and publish that on [easyeda.com](https://easyeda.com/) so that there will be no need to buy multiple modules but only one PCB, some ICs and passive parts.
 
 **Additional ressources**
 * Plenty information on the ESP32 can be found on [esp32.net](http://esp32.net/)
 * As an external DAC one could use [this](https://www.aliexpress.com/item/Raspberry-Pi-pHAT-Sound-Card-I2S-interface-PCM5102-DAC-Module-24-bit-Audio-Board-With-Stereo/32742608325.html?spm=2114.01010208.3.11.ddyYMk&ws_ab_test=searchweb0_0,searchweb201602_1_116_10065_117_10068_114_115_113_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10073_10100_10096_10070_423_10052_10050_424_10051,searchweb201603_8&btsid=bb11f509-3b4e-4445-ac5f-50921a1462d9) although the audio quallity needs to be evaluated
+* The Espressif community forum for the ESP32 is found [here](http://esp32.com/)
 
 ## Software
-Some work of the software development part has already been done by. I'm talking about figuring out the protocol that the radio and CD changer use. Information on that protocol can be found in the additional ressources below. What's left is:
+Some work of the software development part has already been done as some smart people already figured out the protocol that the radio and CD changer are speaking. Information on that protocol can be found in the additional ressources below. What's left is:
 * Port the radio/CD changer protocol for use with NodeMCU
-* Contribute to the NodeMCU port for the NodeMCU-32S because it seems that there is no Bluetooth LUA module available yet
-* Figure out i2c audio output on NodeMCU platforms
+* Figure out what Bluetooth profile should be used for receiving audio and control tasks like play and pause
+* Figure out i2c audio output on the ESP32
 * Develop the main application accoring to the requirement analysis
 
 **Additional ressources**
 * Information on the radio/CD changer protocol by Martin S. can be found on [martinsuniverse.net](http://martinsuniverse.de/projekte/cdc_protokoll/cdc_protokoll.html) (german)
 * Implementation of the radio/CD changer protocol using a Raspberry Pi on [dev.shyd.de](http://dev.shyd.de/2013/09/avr-raspberry-pi-vw-beta-vag-cdc-faker/)
-* ESP32 tree of NodeMCU on [GitHub](https://github.com/nodemcu/nodemcu-firmware/tree/dev-esp32)
-* NodeMCU on [Wikipedia](https://en.wikipedia.org/wiki/NodeMCU)
+* ESP32 firmware, SDK and exmaples on [GitHub](https://github.com/espressif/esp-idf)
 
 ## Requirement analysis
 

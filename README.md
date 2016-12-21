@@ -44,7 +44,7 @@ Some work of the software development part has already been done as some smart p
 * ESP32 firmware, SDK and exmaples on [GitHub](https://github.com/espressif/esp-idf)
 * Some information on how Bluedroid is used on Android [CaVa on Bitbucked](https://bitbucket.org/lememta/cava/wiki/Enable%20Bluetooth(Turn%20on%20bluetooth)
 * Android docs on the Bluetooth implementation [source.android.com](https://source.android.com/devices/bluetooth.html)
-* Android's JNI implementation to expose Bluetooth to Java clients [android.googlesource.com](https://android.googlesource.com/platform/packages/apps/Bluetooth/]
+* Android's JNI implementation to expose Bluetooth to Java clients [android.googlesource.com](https://android.googlesource.com/platform/packages/apps/Bluetooth/)
 
 ## Requirement analysis
 

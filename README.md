@@ -45,13 +45,13 @@ Some work of the software development part has already been done as some smart p
 * Some information on how Bluedroid is used on Android [CaVa on Bitbucked](https://bitbucket.org/lememta/cava/wiki/Enable%20Bluetooth(Turn%20on%20bluetooth))
 * Android docs on the Bluetooth implementation [source.android.com](https://source.android.com/devices/bluetooth.html)
 * Android's JNI implementation to expose Bluetooth to Java clients [android.googlesource.com](https://android.googlesource.com/platform/packages/apps/Bluetooth/)
-* The patches to Android that enabled A2DP sink functionality:
- * https://android-review.googlesource.com/#/c/98161/
- * https://android-review.googlesource.com/#/c/97832/
- * https://android-review.googlesource.com/#/c/97853/
- * https://android-review.googlesource.com/#/c/97833/
- * https://android-review.googlesource.com/#/c/98130/
- * https://android-review.googlesource.com/#/c/98131/
+* The patches to Android that enabled A2DP sink functionality: 
+  * https://android-review.googlesource.com/#/c/98161/
+  * https://android-review.googlesource.com/#/c/97832/
+  * https://android-review.googlesource.com/#/c/97853/
+  * https://android-review.googlesource.com/#/c/97833/
+  * https://android-review.googlesource.com/#/c/98130/
+  * https://android-review.googlesource.com/#/c/98131/
 * SBC decoder that is required to actually decode incoming audio data can be found [here](https://github.com/tieto/sbc-decoder)
 
 ## Requirement analysis

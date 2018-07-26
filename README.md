@@ -21,7 +21,7 @@ There are no compareable products available that only offer wireless connectivit
 * Adding a microphone for handsfree. I guess the phones built in microphone is the better option since those integrate noise reduction. See [Qualcomm Fluence](https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwijuOet-PDQAhUpIcAKHa6wCPgQFggcMAA&url=https%3A%2F%2Fwww.qualcomm.com%2Fmedia%2Fdocuments%2Ffiles%2Fhd-voice.ppt&usg=AFQjCNH6eloYGQNyGbhkG1lk4fI2Fb9SGA) for example
 
 ## Hardware
-The hardware will be built around the Espressif ESP32. This neat little IC bundles Bluetooth and WiFi connectivity aswell as more than enough computing power and IOs for my purposes. The ESP32 will be accompanied by an i2c DAC for analogue audio output to the car radio. The integrated DACs of the ESP32 do not seem suitable for my purposes due to their lowish (8 bit) resolution and possibly slow sampling rate. I2S DAC are commonly used among audio related projects featuring the Raspberry Pi and are therefore widely available plus they wont set you back much. During the project I'll be using a development board like the [this](https://www.adafruit.com/products/3269) and some cheap breakout board DAC. For the finnishing touch I planned to design a PCB for all the components and publish that on [easyeda.com](https://easyeda.com/) so that there will be no need to buy multiple modules but only one PCB, some ICs and passive parts.
+The hardware will be built around the Espressif ESP32. This neat little IC bundles Bluetooth and WiFi connectivity aswell as more than enough computing power and IOs for my purposes. The ESP32 will be accompanied by an I2S DAC for analogue audio output to the car radio. The integrated DACs of the ESP32 do not seem suitable for my purposes due to their lowish (8 bit) resolution and possibly slow sampling rate. I2S DAC are commonly used among audio related projects featuring the Raspberry Pi and are therefore widely available plus they wont set you back much. During the project I'll be using a development board like the [this](https://www.adafruit.com/products/3269) and some cheap breakout board DAC. For the finnishing touch I planned to design a PCB for all the components and publish that on [easyeda.com](https://easyeda.com/) so that there will be no need to buy multiple modules but only one PCB, some ICs and passive parts.
 
 **Additional ressources**
 * Plenty information on the ESP32 can be found on [esp32.net](http://esp32.net/)
@@ -31,12 +31,13 @@ The hardware will be built around the Espressif ESP32. This neat little IC bundl
 ## Software
 Some work of the software development part has already been done as some smart people already figured out the protocol that the radio and CD changer are speaking. Information on that protocol can be found in the additional ressources below. What's left is:
 * Port the radio/CD changer protocol for use with the ESP32's FreeRTOS based OS
-* Figure out how to use the bluedroid stack to turn the ESP32 into an A2DP sink and route the incoming stream to I2S
-* Figure out how to to turn the ESP32 into an AVRCP controller using bluedroid
-* Figure out I2S audio output on the ESP32
+* ~~Figure out how to use the bluedroid stack to turn the ESP32 into an A2DP sink and route the incoming stream to I2S~~
+* ~~Figure out I2S audio output on the ESP32~~
+* Figure out how to to turn the ESP32 into an AVRCP
 * Since Android uses bluedroid a look at the source code may help
 * ...
 * Make everyting work nicely together
+* Apparently A2DP sink to I2S works already: example on [github.com](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/a2dp_sink)
 
 **Additional ressources**
 * Information on the radio/CD changer protocol by Martin S. can be found on [martinsuniverse.net](http://martinsuniverse.de/projekte/cdc_protokoll/cdc_protokoll.html) (german)

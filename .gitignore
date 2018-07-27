@@ -2,3 +2,4 @@ esp_cdc/build
 .DS_Store
 esp_cdc/sdkconfig
 esp_cdc/sdkconfig.old
+.vscode/settings.json

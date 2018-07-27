@@ -1,3 +1,4 @@
 src/build
 .DS_Store
 src/sdkconfig
+src/sdkconfig.old

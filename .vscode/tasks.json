@@ -6,12 +6,13 @@
         {
             "label": "flash",
             "type": "shell",
-            "command": "make flash"
+            "command": "cd src && make flash"
         },
         {
             "label": "monitor",
             "type": "shell",
-            "command": "make monitor"
+            "command": "cd src && make monitor",
+            "problemMatcher": []
         }
     ]
 }

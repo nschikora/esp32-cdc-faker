@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${IDF_PATH}/components",
+                "${IDF_PATH}/components/freertos/include",
+                "${IDF_PATH}/components/esp32/include",
+                "${IDF_PATH}/components/newlib/include",
+                "${IDF_PATH}/components/soc/esp32/include",
+                "${IDF_PATH}/components/heap/include",
+                "${IDF_PATH}/components/soc/include",
+                "${IDF_PATH}/components/driver/include",
+                "${IDF_PATH}/components/spi_flash/include"
+            ],
+            "defines": [],
+            "macFrameworkPath": [
+                "/System/Library/Frameworks",
+                "/Library/Frameworks"
+            ],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}

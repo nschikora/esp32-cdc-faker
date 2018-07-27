@@ -1,4 +1,4 @@
-src/build
+esp_cdc/build
 .DS_Store
-src/sdkconfig
-src/sdkconfig.old
+esp_cdc/sdkconfig
+esp_cdc/sdkconfig.old

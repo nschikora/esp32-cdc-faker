@@ -6,12 +6,12 @@
         {
             "label": "flash",
             "type": "shell",
-            "command": "cd src && make flash"
+            "command": "cd esp_cdc && make flash"
         },
         {
             "label": "monitor",
             "type": "shell",
-            "command": "cd src && make monitor",
+            "command": "cd esp_cdc && make monitor",
             "problemMatcher": []
         }
     ]

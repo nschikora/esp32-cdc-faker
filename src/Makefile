@@ -3,7 +3,7 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := a2dp_sink
+PROJECT_NAME := hello-world
 
 include $(IDF_PATH)/make/project.mk
 

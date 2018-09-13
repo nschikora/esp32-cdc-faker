@@ -3,3 +3,4 @@ esp_cdc/build
 esp_cdc/sdkconfig
 esp_cdc/sdkconfig.old
 .vscode/settings.json
+.vscode/c_cpp_properties.json

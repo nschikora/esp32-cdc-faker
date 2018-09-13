@@ -57,6 +57,8 @@ Some work of the software development part has already been done as some smart p
 
 ## Requirement analysis
 
+See the [project](https://github.com/nschikora/esp32-cdc-faker/projects/1) here.
+
 ## Legal issues
 
 I think there are four different legal issues regarding this project.

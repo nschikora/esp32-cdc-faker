@@ -12,7 +12,12 @@
                 "${IDF_PATH}/components/heap/include",
                 "${IDF_PATH}/components/soc/include",
                 "${IDF_PATH}/components/driver/include",
-                "${IDF_PATH}/components/spi_flash/include"
+                "${IDF_PATH}/components/spi_flash/include",
+                "${IDF_PATH}/components/log/include",
+                "${IDF_PATH}/components/nvs_flash/include",
+                "${IDF_PATH}/components/bt/include",
+                "${IDF_PATH}/components/bt/bluedroid/api/include/api",
+                "${workspaceFolder}/esp_cdc/main"
             ],
             "defines": [],
             "macFrameworkPath": [

@@ -107,13 +107,6 @@ static int nec_parse_items(rmt_item32_t* item, int item_num, uint16_t* addr, uin
     return i;
 }
 
-
-RadioCommandReceiver& RadioCommandReceiver::instance() {
-    static RadioCommandReceiver instance;
-    return instance;
-}
-
-
 RadioCommandReceiver::RadioCommandReceiver() 
 {
 
@@ -127,7 +120,7 @@ RadioCommandReceiver::~RadioCommandReceiver() {
 
 void RadioCommandReceiver::startup() {
     esp_err_t ret;
-    rmt_config_t rmt_rx;
+    rmt_config_t rmt_rx = {};
     rmt_rx.channel = RMT_RX_CHANNEL;
     rmt_rx.gpio_num = RMT_RX_GPIO_NUM;
     rmt_rx.clk_div = RMT_CLK_DIV;

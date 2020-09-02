@@ -12,5 +12,5 @@ private:
     i2sHandler _i2sHandler;
     A2DPHandler _A2DPHandler;
     CDChanger _CDChanger;
-    CarRadio _CarRadio;
+    CarRadio& _CarRadio;
 };

@@ -4,13 +4,23 @@
 
 class SPIHandler {
 public:
-    SPIHandler();
-    ~SPIHandler();
 
+    static SPIHandler& getInstance() {
+        static SPIHandler instance;
+        return instance;
+    }
+    
     void startup();
     void init();
     void send_cmd(const char *data, const uint8_t len);
-    void send_data(const char *data, int size);
+
+private:
+    SPIHandler();
+    ~SPIHandler();
+    SPIHandler(SPIHandler const&); // Don't Implement
+    void operator=(SPIHandler const&); // Don't implement
+
+    void send_data(const char *data);
     bool delete_timer_if_done();
     void send_next_byte();
 
@@ -23,5 +33,6 @@ public:
     uint8_t _curByteIx;
     bool _sending;
 
-    static SPIHandler& instance();
+    int64_t _ts;
+    int64_t _te;
 };
